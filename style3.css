@@ -1,0 +1,42 @@
+.terserah{
+    display:flex;
+    
+   
+}
+.header{
+    
+    background-color: burlywood;
+    height: 100px;
+    
+}
+
+
+.article{
+    margin-right: 800px;
+    margin-left: 0px;
+}
+
+.aside{
+    
+    background-color: pink;
+    width: 200px;
+    height: 380px;
+    margin-left: 20px;
+}
+
+.nav{
+    background-color: aqua;
+    width: 200px;
+    height: 380px;
+}
+
+.footer{
+  
+  
+    background-color: burlywood;
+    height: 100px;
+}
+body{
+    margin:0;
+    padding:0;
+}

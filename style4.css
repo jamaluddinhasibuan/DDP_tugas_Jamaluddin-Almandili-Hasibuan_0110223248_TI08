@@ -1,0 +1,43 @@
+.samping{
+    display: flex;
+    
+    justify-content: center;
+    text-align: center;
+}
+
+.header{
+    height: 140px;
+    width: 1000px;
+    background-color: gold;
+}
+
+.article{
+    height: 300px;
+    width: 75%;
+
+}
+
+.aside{
+    width: 25%;
+    height: 300px;
+    background-color: aqua;
+}
+
+.footer{
+    height: 140px;
+    width: 100%;
+    background-color: gold;
+}
+
+.jarak{
+    display:flex;
+    text-align: 20px left;
+
+}
+
+.nav{
+    height: 580px;
+    width: 200px;
+    background-color: pink;
+
+}
