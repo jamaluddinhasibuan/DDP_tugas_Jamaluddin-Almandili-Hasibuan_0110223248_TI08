@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkir js</title>
+</head>
+
+<body>
+    <div style="border: 2px solid;width: 60%; padding: 10px; margin: 20px 30px;">
+        <p>Menghitung biaya parkir: </p>
+        <input type="number" oninput="parkir(this.value)">
+        <p>Jam masuk: <span id="jam"></span></p>
+        <p>Bayar parkir: <span id="bayar"></span></p>
+    </div>
+
+    <script>
+        function parkir(angka) {
+            const jam = document.getElementById('jam')
+            const bayar = document.getElementById('bayar')
+
+            if(angka <= 2) {
+                jam.innerHTML = angka
+                bayar.innerHTML = 3000
+            }
+
+            if(angka > 2) {
+                jam.innerHTML = angka
+
+                const result = ((angka - 2) * 1000) + 3000
+                bayar.innerHTML = result
+            }
+        }
+    </script>
+</body>
+
+</html>

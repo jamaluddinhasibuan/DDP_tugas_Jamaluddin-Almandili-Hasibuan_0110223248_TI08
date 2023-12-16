@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="money" id="money" />
+    <select name="kurs" id="">
+      <option value="usd">USD | 15.000</option>
+      <option value="eur">EUR | 16.000</option>
+      <option value="sgd">SGD | 11.500</option>
+    </select>
+    <button id="hitung">Convert</button>
+
+    <p id="result">hasil</p>
+
+    <script>
+      const money = document.querySelector("#money");
+      const kurs = document.querySelector("#kurs");
+      const result = document.querySelector("#result");
+      const btn = document.querySelector("#hitung");
+
+      btn.addEventListener("click", function () {
+        if (kurs.value == "usd") {
+          result.innerHTML = "Hasil: Rp." + money.value * 15.0;
+        } else if (kurs.value == "eur") {
+          result.innerHTML = "Hasil: Rp." + money.value * 16.0;
+        } else {
+          result.innerHTML = "Hasil: Rp." + money.value * 11.5;
+        }
+      });
+    </script>
+  </body>
+</html>
