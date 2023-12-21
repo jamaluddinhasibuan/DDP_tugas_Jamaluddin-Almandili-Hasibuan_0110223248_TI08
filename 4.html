@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menampilkan Gambar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    select {
+      margin-bottom: 20px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    #gambar-container {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    #gambar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Menampilkan Gambar</h1>
+
+  <label for="pilihGambar">Pilih Gambar:</label>
+  <select id="pilihGambar" onchange="tampilkanGambar()">
+    <option value="images/gambar1.png">Harimau</option>
+    <option value="images/gambar2.png">Macan Tutul</option>
+    <option value="images/gambar3.png">Singa</option>
+    <option value="images/gambar4.png">Kijang</option>
+    <option value="images/gambar5.png">Tapir</option>
+    <option value="images/gambar6.png">Kapibara (Mas Bro)</option>
+  </select>
+
+  <div id="gambar-container">
+    <img id="gambar" src="" alt="Gambar">
+  </div>
+
+  <script>
+    function tampilkanGambar() {
+      const selectGambar = document.getElementById("pilihGambar");
+      const gambarContainer = document.getElementById("gambar");
+      
+      const namaFileGambar = selectGambar.value;
+      gambarContainer.src = namaFileGambar;
+
+      // Tampilkan informasi nama file gambar menggunakan alert
+      alert("Nama File Gambar: " + namaFileGambar);
+    }
+  </script>
+
+</body>
+</html>

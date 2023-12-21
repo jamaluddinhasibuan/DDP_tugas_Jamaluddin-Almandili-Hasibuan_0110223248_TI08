@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konversi Mata Uang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    select, input {
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Konversi Mata Uang ke Rupiah</h1>
+
+  <label for="mataUang">Pilih Mata Uang:</label>
+  <select id="mataUang" onchange="updateNilaiRupiah()">
+    <option value="usd">Dollar US</option>
+    <option value="sgd">Dollar Singapore</option>
+    <option value="myr">Ringgit Malaysia</option>
+    <option value="jpy">Yen Jepang</option>
+    <option value="eur">Euro</option>
+    <option value="sar">Riyal Arab Saudi</option>
+  </select>
+
+  <label for="nilaiMataUang">Masukkan Nilai Mata Uang:</label>
+  <input type="number" id="nilaiMataUang" oninput="updateNilaiRupiah()" />
+
+  <h3>Hasil Konversi:</h3>
+  <p id="hasilKonversi">Nol Rupiah</p>
+
+  <script>
+    function updateNilaiRupiah() {
+      const mataUang = document.getElementById("mataUang").value;
+      const nilaiMataUang = parseFloat(document.getElementById("nilaiMataUang").value);
+
+      // Nilai valas uang asing ke rupiah
+      const nilaiValas = {
+        usd: 9915,
+        sgd: 13472,
+        myr: 874,
+        jpy: 120,
+        eur: 15888,
+        sar: 3592
+      };
+
+      const nilaiRupiah = nilaiMataUang * nilaiValas[mataUang];
+      const hasilKonversiElement = document.getElementById("hasilKonversi");
+      hasilKonversiElement.textContent = `${nilaiRupiah.toFixed(2)} Rupiah`;
+    }
+  </script>
+
+</body>
+</html>

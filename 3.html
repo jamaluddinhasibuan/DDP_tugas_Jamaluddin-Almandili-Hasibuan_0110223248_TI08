@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbox</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #chatbox-container {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 600px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-right: 600px;
+      margin-bottom: 270px;
+    }
+
+    #pesan-container {
+      height: 200px;
+      overflow-y: scroll;
+      padding: 10px;
+      background-color: #f8f8f8;
+    }
+
+    #input-pesan {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    #btn-kirim {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 0 0 5px 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body style="margin-right:300px;">
+
+  <div id="chatbox-container">
+    <div id="pesan-container"></div>
+    <input type="text" id="input-pesan" placeholder="Tulis pesan..." />
+    <button id="btn-kirim" onclick="kirimPesan()">Kirim</button>
+  </div>
+
+  <script>
+    function kirimPesan() {
+      const inputPesan = document.getElementById("input-pesan");
+      const pesanContainer = document.getElementById("pesan-container");
+
+      if (inputPesan.value.trim() !== "") {
+        const pesanBaru = document.createElement("div");
+        pesanBaru.textContent = inputPesan.value;
+        pesanContainer.appendChild(pesanBaru);
+
+        // Reset input
+        inputPesan.value = "";
+
+        // Autoscroll 
+        pesanContainer.scrollTop = pesanContainer.scrollHeight;
+      }
+    }
+  </script>
+
+</body>
+</html>
